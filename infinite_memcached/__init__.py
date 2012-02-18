@@ -10,7 +10,7 @@ class MemcachedInfiniteCache(memcached.MemcachedCache):
     def _get_memcache_timeout(self, timeout):
         """Override _get_memcache_timeout so that it accepts 0 and defaults to infinite"""
         if timeout == 0 or timeout == None: return 0
-        else: return super(MemcachedCache, self)._get_memcache_timeout(timeout)
+        else: return super(MemcachedInfiniteCache, self)._get_memcache_timeout(timeout)
 
 class PyLibMCInfiniteCache(memcached.PyLibMCCache):
     """
@@ -21,4 +21,4 @@ class PyLibMCInfiniteCache(memcached.PyLibMCCache):
     def _get_memcache_timeout(self, timeout):
         """Overriding _get_memcache_timeout so that it defaults to infinite"""
         if timeout == 0 or timeout == None: return 0
-        else: return super(MemcachedCache, self)._get_memcache_timeout(timeout)
+        else: return super(MemcachedInfiniteCache, self)._get_memcache_timeout(timeout)
