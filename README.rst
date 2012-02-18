@@ -5,6 +5,8 @@ A cache backend to better work with "infinite" timeouts in memcached.
 
 Enables the use of ``timeout=0`` when using memcached in Django.
 
+Supports ``python-memcached`` and ``pylibmc``.
+
 Installation
 -------------
 
@@ -28,6 +30,8 @@ existing code should continue to work.  You'll just now be able to use
 ``MemcachedInfiniteCache`` and ``PyLibMCInfiniteCache`` use infinite caching as default
 so that you don't need to defined ``timeout=0``.
 
+3) ``pylibmc`` depends on libmemcached from: ``http://libmemcached.org/libMemcached.html``
+
 Versions
 --------
 
@@ -41,5 +45,4 @@ TODO
 ----
 
 - Add unittests
-- Add support for pylibmc
 - Contributions welcome
