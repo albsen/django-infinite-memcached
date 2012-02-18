@@ -10,7 +10,7 @@ Installation
 
 1) ``pip install -e git+http://github.com/edavis/django-infinite-memcached.git#egg=django-infinite-memcached``
 
-2) Set ``infinite_memcached.MemcachedCache`` as the ``BACKEND`` in ``CACHES``
+2) Set ``infinite_memcached.MemcachedCache`` or ``infinite_memcached.PyLibMCInfiniteCache`` or ``infinite_memcached.MemcachedInfiniteCache`` as the ``BACKEND`` in ``CACHES``
 
 For example::
 
@@ -24,6 +24,9 @@ For example::
 This cache backend only overrides how timeouts are calculated, so
 existing code should continue to work.  You'll just now be able to use
 ``timeout=0`` with ``cache.add``, ``cache.set``, and ``cache.set_many``.
+
+``MemcachedInfiniteCache`` and ``PyLibMCInfiniteCache`` use infinite caching as default
+so that you don't need to defined ``timeout=0``.
 
 Versions
 --------
